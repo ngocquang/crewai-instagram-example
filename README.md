@@ -15,12 +15,21 @@ pip install poetry
 Next, navigate to your project directory and install the dependencies:
 
 1. First lock the dependencies and then install them:
+
 ```bash
 poetry lock
 ```
+
 ```bash
 poetry install
 ```
+
+```bash
+python3 -m venv myenv
+source myenv/bin/activate # MacOS
+pip3 install -r requirements.txt
+```
+
 ### Customizing
 
 **Add your `OPENAI_API_KEY` into the `.env` file**
@@ -49,9 +58,20 @@ The instagram Crew is composed of multiple AI agents, each with unique roles, go
 ## Support
 
 For support, questions, or feedback regarding the Instagram Crew or crewAI.
+
 - Visit our [documentation](https://docs.crewai.com)
 - Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
 - [Joing our Discord](https://discord.com/invite/X4JWnZnxPb)
 - [Chat wtih our docs](https://chatg.pt/DWjSBZn)
 
 Let's create wonders together with the power and simplicity of crewAI.
+
+## Example
+
+Pusoy ZingPlay Philippines is a popular online card game that brings the traditional Filipino game of Pusoy to the digital world. This game, also known as Chinese Poker, allows players to experience the excitement and strategy of Pusoy on their mobile devices. The game is designed with vibrant graphics and an intuitive user interface, making it accessible and enjoyable for both seasoned players and beginners.
+
+In Pusoy ZingPlay, players compete against each other to form the best possible three poker hands out of the 13 cards dealt to them. The objective is to beat the other players' hands and accumulate points to climb the leaderboards. The game offers various modes, including practice sessions for newcomers, competitive matches for seasoned players, and tournaments with exciting rewards.
+
+Pusoy ZingPlay also features social elements, allowing players to connect with friends, join clubs, and participate in club events. The game's chat and emoji functions enhance the social experience, making each match more interactive and fun. Regular updates and special events keep the gameplay fresh and engaging, offering new challenges and rewards.
+
+Whether you're looking to sharpen your Pusoy skills or simply enjoy a fun and strategic card game, Pusoy ZingPlay Philippines provides a comprehensive and entertaining platform to do so.
