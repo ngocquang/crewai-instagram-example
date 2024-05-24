@@ -28,6 +28,10 @@ poetry install
 python3 -m venv myenv
 source myenv/bin/activate # MacOS
 pip3 install -r requirements.txt
+
+streamlit run src/post_social/streamlit_app.py
+
+python3 src/financial_analyst/main.py
 ```
 
 ### Customizing

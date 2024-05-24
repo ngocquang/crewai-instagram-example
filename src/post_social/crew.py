@@ -30,7 +30,7 @@ backstory = 'You are a marketing campaign planner in the mobile game industry',
 verbose= True,
 allow_delegation= False,
 llm=llm,
-tools=human_tools
+# tools=human_tools
 )
 
 digital_marketer =  Agent(
@@ -46,17 +46,15 @@ allow_delegation= False,
 
 def run(inputs):
 
-    task1 = Task(description=inputs.prompt1,
+    task1 = Task(description=inputs["prompt1"],
         expected_output = 'New and Emerging Market Trends in the Card Game Pusoy ZingPlay in Philippines in 2024',
         agent=market_researcher)
 
-    task2 = Task(description=
-        (inputs.prompt2,
-        " Make sure to check with a human if the draft is good before finalizing your answer."),
+    task2 = Task(description=inputs["prompt2"],
         expected_output = 'Digital Marketing Campaign ideas based on the market trends which have the potential to go viral on Facebook, Instagram',
         agent=campaign_creator)
 
-    task3 = Task(description=inputs.prompt3,
+    task3 = Task(description=inputs["prompt3"],
         expected_output = """Weekly posts with SEO friendly hashtags for social media platforms like Facebook, Instagram.
         Example post:
     👉 COM.MENT THE RANKG
@@ -77,4 +75,4 @@ def run(inputs):
         process = Process.sequential
     )
     # kick-off the tasks
-    return crew.kickoff()
+    return crew.kickoff(),task1,task2,task3

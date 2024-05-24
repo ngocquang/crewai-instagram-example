@@ -1,5 +1,5 @@
 import streamlit as st
-from crew import run,task1, task2, task3  # Import the ResearchCrew class from main.py
+from crew import run # Import the ResearchCrew class from main.py
 import os
 import datetime
 
@@ -23,7 +23,8 @@ if st.button('Generate'):
         st.error("Please fill all the fields.")
     else:
         with st.spinner("Generating response..."):
-            st.write(run())
+            result, task1, task2, task3 = run({"prompt1":prompt1,"prompt2":prompt2,"prompt3":prompt3})
+            st.write(result)
             st.write(task1.output)
             st.write(task2.output)
             st.write(task3.output)
