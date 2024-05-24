@@ -1,6 +1,8 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from langchain_groq import ChatGroq
+# from tools.sec_tools import SECTools
+
 # from langchain.llms import Ollama
 # ollama_mixtral = Ollama(model="mixtral", base_url="https://11434-01ht0mvyjesyha3xfdnzha3w8p.cloudspaces.litng.ai")
 
@@ -18,6 +20,7 @@ class FinancialAnalystCrew():
 	def company_researcher(self) -> Agent:
 		return Agent(
 			config = self.agents_config['company_researcher'],
+			# tools=[SECTools.search_10k],
 			llm = self.groq_llm
 		)
 

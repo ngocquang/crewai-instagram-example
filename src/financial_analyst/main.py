@@ -6,7 +6,7 @@ from crew import FinancialAnalystCrew
 
 def run():
     inputs = {
-        'company_name': 'Tesla',
+        'company_name': 'Apple Inc.',
     }
     FinancialAnalystCrew().crew().kickoff(inputs=inputs)
 
