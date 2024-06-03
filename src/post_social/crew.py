@@ -1,6 +1,7 @@
 
 import openai
 from crewai import Agent, Task, Crew, Process
+from textwrap import dedent
 
 from langchain.agents import load_tools
 import os
@@ -16,8 +17,10 @@ human_tools = load_tools(["human"])
 
 market_researcher = Agent(
 role = 'Market Researcher',
-goal='Research new and emerging trends in the mobile game in Philippines',
-backstory = 'You are a market researcher in the mobile game industry',
+goal=dedent("""\
+    Research new and emerging trends in the mobile game in Philippines
+    """),
+backstory = dedent("""You are a market researcher in the mobile game industry"""),
 verbose= True,
 allow_delegation= False,
     llm=llm
@@ -25,8 +28,12 @@ allow_delegation= False,
 
 campaign_creator =  Agent(
 role = 'Marketing Campaign Creator',
-goal='Come up with 3 interesting marketing campaign ideas in the mobile game industry based on market research insights',
-backstory = 'You are a marketing campaign planner in the mobile game industry',
+goal=dedent("""\
+            Come up with 3 interesting marketing campaign ideas in
+            the mobile game industry based on market research insights
+            """),
+backstory = dedent("""\
+            You are a marketing campaign planner in the mobile game industry"""),
 verbose= True,
 allow_delegation= False,
 llm=llm,
@@ -35,8 +42,15 @@ llm=llm,
 
 digital_marketer =  Agent(
 role = 'Digital Marketing Content Creator',
-goal='Come up with 2 or 3 interesting advertisement ideas for marketing on digital platforms such as Facebook, Instagram along with script for each marketing campaign',
-backstory = 'You are a marketing marketer specialising in performance marketing in the mobile game industry',
+goal=dedent("""\
+            Come up with 2 or 3 interesting advertisement ideas
+            for marketing on digital platforms such as Facebook,
+            Instagram along with script for each marketing campaign
+            """),
+backstory = dedent("""\
+            You are a marketing marketer specialising in
+            performance marketing in the mobile game industry
+            """),
 verbose= True,
 allow_delegation= False,
     llm=llm
@@ -47,15 +61,25 @@ allow_delegation= False,
 def run(inputs):
 
     task1 = Task(description=inputs["prompt1"],
-        expected_output = 'New and Emerging Market Trends in the Card Game Pusoy ZingPlay in Philippines in 2024',
+        expected_output = dedent("""\
+            New and Emerging Market Trends in
+            the Card Game Pusoy ZingPlay in
+            Philippines in 2024
+            """),
         agent=market_researcher)
 
     task2 = Task(description=inputs["prompt2"],
-        expected_output = 'Digital Marketing Campaign ideas based on the market trends which have the potential to go viral on Facebook, Instagram',
+        expected_output = dedent("""\
+            Digital Marketing Campaign ideas
+            based on the market trends which have
+            the potential to go viral on
+            Facebook, Instagram
+            """),
         agent=campaign_creator)
 
     task3 = Task(description=inputs["prompt3"],
-        expected_output = """Weekly posts with SEO friendly hashtags for social media platforms like Facebook, Instagram.
+        expected_output = dedent("""\
+        Weekly posts with SEO friendly hashtags for social media platforms like Facebook, Instagram.
         Example post:
     👉 COM.MENT THE RANKG
     🤩 Have you memorized all the poker rank by heart? Answer this quiz to double check your knowledge!
@@ -64,7 +88,7 @@ def run(inputs):
     🔥 ANDROID: https://rebrand.ly/pusoyzingplay
     🔥 IOS: https://apps.apple.com/ca/app/pusoy-zingplay-outsmart-fate/id1636802011
     #ZingPlay #PusoyZingPlay #ZingPlayFamily #AmaZingPlay
-        """,
+        """),
         agent=digital_marketer)
 
     # Create crew
