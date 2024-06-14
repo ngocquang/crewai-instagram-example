@@ -1,0 +1,32 @@
+content_strategy:
+  description: >
+    Based on the game information and topics given, develop a
+    comprehensive content calendar for a week. The calendar should
+    specify the theme for each day of the week (from Monday to Sunday)
+    where some content should be posted, and preliminary ideas for
+    post content. For now, focus on a three-day content calendar,
+    including the most relevant keywords and hashtags to use in each
+    post.
+    The focus of the following week is the following:
+    <NEXT_WEEK_CONTENT>{topic_of_the_week}</NEXT_WEEK_CONTENT>
+  expected_output: >
+    A detailed week-long content calendar, formatted as markdown, that includes days of the week (from monday to friday), a brief overview of content ideas, and the most relevant keywords and hashtags to use in each post. Ensure the calendar aligns with the identified trends and audience preferences.
+
+copywriting:
+  description: >
+    Write captivating and relevant copy for each Facebook post of the week, aligning to the strategic themes of the content calendar. The copy should engage the audience, embody the brand's voice, and encourage interaction. The copy should also be SEO-friendly and incorporate the relevant keywords and hashtags contained in the content schedule.
+
+    Consider the following guidelines when writing the copy:
+    - Keep the copy concise and engaging.
+    - Include a call to action where appropriate.
+    - Use relevant keywords and hashtags.
+    - Ensure the copy aligns with the brand's voice and tone.
+
+    Always add this content to the end of the post:
+    ---------------------------------------------
+    👉 Ready to play? Get the app now:
+    🔥 ANDROID: https://rebrand.ly/pusoyzingplay
+    🔥 IOS: https://apps.apple.com/ca/app/pusoy-zingplay-outsmart-fate/id1636802011
+    #ZingPlay #PusoyZingPlay #ZingPlayFamily #AmaZingPlay
+  expected_output: >
+    A document formatted as markdown, with several sections. Each section should contain the copy for a single Facebook post, along with the relevant hashtags and calls to action. The copy should be engaging, on-brand, and aligned with the content calendar.

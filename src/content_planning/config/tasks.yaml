@@ -1,0 +1,19 @@
+content_planning:
+  description: >
+    Suggest big idea based on provided information.
+    Craft the catchy key message to deliver the big idea
+    Establish a list of content pillar to deliver big idea & key message
+    Plan content angle & activities to deliver content
+  expected_output: >
+    A social media content plan including a big idea, key message, content pillar, themes, and content calendar.
+    A document formatted as markdown, with several sections.
+  output_file: content_planning_output.md
+
+content_create:
+  description: >
+    Determine the mechanics to delivery for each content
+    Write posts for each content
+  expected_output: >
+    A set of social media posts.
+    A document formatted as markdown.
+  output_file: content_create_output.md

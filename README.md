@@ -32,6 +32,12 @@ pip3 install -r requirements.txt
 streamlit run src/post_social/streamlit_app.py
 
 python3 src/financial_analyst/main.py
+
+python3 src/facebook/main.py
+streamlit run src/facebook/streamlit_app.py
+
+
+python3 src/content_planning/main.py
 ```
 
 ### Customizing

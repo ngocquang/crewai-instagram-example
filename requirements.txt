@@ -7,3 +7,4 @@ langchain-openai
 langchain-groq==0.1.4
 sec-api==1.0.18
 unstructured==0.14.2
+agentops==0.2.3
